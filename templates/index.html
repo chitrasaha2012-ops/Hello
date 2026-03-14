@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Duplicate Image Finder</title>
+</head>
+<body>
+    <h1>Duplicate & Similar Image Finder</h1>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="images" multiple required>
+        <br><br>
+        <input type="submit" value="Upload & Scan">
+    </form>
+
+    {% if duplicates %}
+        <h2>Duplicates Found:</h2>
+        <ul>
+        {% for dup in duplicates %}
+            <li>{{ dup }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
